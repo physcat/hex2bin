@@ -58,7 +58,7 @@ string hex2bin(const string& hex)
 			bin+="1101";
 			break;
 		case 'E': case 'e':
-			bin,	"1110";
+			bin+="1110";
 			break;
 		case 'F': case 'f':
 			bin+="1111";
@@ -79,7 +79,7 @@ int main()
 	getline(cin, input);
 	string ans;
 	try {
-	ans = hex2bin(input);
+		ans = hex2bin(input);
 	} catch (domain_error error) {
 		cout << error.what();
 	}
