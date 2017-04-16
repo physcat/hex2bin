@@ -3,9 +3,9 @@
  * returns a ascii binary string
  */
 
-#include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 char* hex2bin(const char* hex)
 {
@@ -64,25 +64,11 @@ char* hex2bin(const char* hex)
 			strcat(bin, "1111");
 			break;
 		default:
-			printf("error\n");
-			exit(1);
+            free(bin);
+            return NULL;
 		}
 		++hex;
 	}
 
 	return bin;
-}
-
-
-int main()
-{
-	char input[512+1];
-	do {
-		fscanf(stdin, "%512s", input);
-		char* ans;
-		ans = hex2bin(input);
-		printf("%s\n", ans);
-		free(ans);
-	} while (strlen(input) == 512);
-	return 0;
 }

@@ -1,2 +1,5 @@
+*.o
+test
+*.dSYM
 c/hex2bin
 cc/hex2bin

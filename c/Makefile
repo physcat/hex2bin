@@ -1,2 +1,10 @@
 CFLAGS=-g
-all: hex2bin
+all: test
+
+BIN=test
+
+test: hex2bin.o
+
+clean:
+	rm -f ${BIN} *.o
+
